@@ -1,0 +1,61 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: #1a2238;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 9rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+}
+
+.badge {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  position: absolute;
+  transform: rotate(12deg);
+  top: 45%;
+  font-weight: 500;
+}
+
+.button {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  background-color: #1a2238;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  z-index: 1;
+  outline: none;
+  transition: var(--main-transition);
+}
+
+.link:active {
+  transform: scale(0.95);
+}
+.link:hover {
+  color: white;
+  background-color: var(--primary);
+}

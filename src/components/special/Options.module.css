@@ -1,0 +1,71 @@
+/* Options Container */
+.options {
+  display: flex;
+  align-items: center;
+  gap: 01rem;
+}
+
+/* addNote */
+.addNote {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 84px;
+  max-width: 480px;
+  height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 0.75rem;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+
+  background-color: var(--primary-accent);
+  color: #343a40;
+
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+/* themeIcon */
+.themeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+
+  height: 2.5rem;
+  width: 2.5rem;
+  max-width: 480px;
+  border-radius: 0.5rem;
+
+  background-color: var(--background-color);
+  color: var(--text-heading);
+
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+
+  [theme-mode="dark"] & {
+    background-color: #222d4299;
+  }
+}
+

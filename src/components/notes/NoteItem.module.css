@@ -1,0 +1,200 @@
+.noteCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  background-color: var(--card-pg);
+  transition: all 0.3s ease;
+}
+
+.noteCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.title {
+  color: var(--text-heading);
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: normal;
+  margin-top: 0.25rem;
+}
+
+.date {
+  color: rgba(108, 117, 125, 0.7);
+  font-size: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+[theme-mode="dark"] .date {
+  color: rgba(176, 176, 176, 0.7);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: var(--main-transition);
+}
+
+.noteCard:hover .actions {
+  opacity: 1;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: var(--text-heading);
+  transition: all 0.2s ease;
+  border: 1px solid var(--text-heading);
+}
+
+.actionBtn {
+  &.trashIcon:hover {
+    color: var(--danger-color);
+  }
+  &.editIcon:hover {
+    color: var(--primary);
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .noteCard {
+    padding: 0.75rem;
+  }
+}
+
+/* Modal Style */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  position: relative;
+  background-color: var(--card-pg);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--card-pg);
+  border: 1px solid var(--border-color);
+  border-radius: inherit;
+  padding: 1.5rem;
+  min-width: 320px;
+  max-width: 480px;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+
+.actionBtns {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.form,
+.cancelBtn,
+.saveBtn,
+.input,
+.textarea {
+  pointer-events: auto;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.overlay {
+  animation: fadeIn 0.2s ease;
+}
+
+.content {
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    padding: 1rem;
+    min-width: 260px;
+    max-width: 340px;
+    border-radius: 0.4rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .form {
+    padding: 0.8rem;
+    min-width: 220px;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,29 @@
+.app {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.sidebar {
+  padding: 0.5rem;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  background: var(--nav-pg);
+  border-right: 1px solid var(--border-color);
+}
+
+.mainContent {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--background-color);
+  padding: 2rem;
+}
+
+@media (max-width: 640px) {
+  .mainContent {
+    padding: 1rem 0.75rem ;
+  }
+}

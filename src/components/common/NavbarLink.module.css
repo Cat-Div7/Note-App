@@ -1,0 +1,44 @@
+/* NavLink */
+.navlink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--navlink-muted);
+  transition: background-color 160ms ease, color 160ms ease;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: capitalize;
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  &.centered {
+    justify-content: center;
+    padding: 0.75rem 0.5rem !important;
+    .icon {
+      font-size: 1.35rem !important;
+    }
+  }
+
+  /* Icons & Text */
+  .icon {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+  .text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* NavLink Effects */
+.navlink.active {
+  color: var(--primary);
+  background-color: var(--primary-20);
+}
+.navlink:not(.active):hover {
+  background-color: var(--navlink-pg);
+}

@@ -1,0 +1,123 @@
+:root {
+  --primary-accent: #aec6cf;
+  --border: #e2e8f0;
+}
+
+[theme-mode="dark"] {
+  --primary-accent: #77a8b7;
+  --border: #1e293b;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  white-space: nowrap;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background-color: var(--card-pg);
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  [theme-mode="dark"] & {
+    background-color: #11162199;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+
+  .logoIcon {
+    color: var(--primary-accent);
+    font-size: 1.75rem;
+  }
+  .logoText {
+    margin-left: 5px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Toggle Button */
+.toggleButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.toggleButton span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--primary-accent);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.toggleButton.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.toggleButton.active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.toggleButton.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Nav Options */
+.mobileOptions {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 0.25rem;
+
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--card-pg);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  animation: fadeIn 0.3s ease;
+  z-index: 999;
+}
+
+@media (min-width: 640px) {
+  .logoContainer .logoText {
+    margin-left: 10px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: calc(0.75rem / 1.5) calc(1.5rem / 1.5);
+  }
+}

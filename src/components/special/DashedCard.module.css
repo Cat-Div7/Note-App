@@ -1,0 +1,62 @@
+:root {
+  --primary-color: #2563eb;
+  --primary-color-opacity: rgba(37, 99, 235, 0.8);
+
+  --primary-bg-light: rgba(37, 99, 235, 0.1);
+  --primary-bg-hover-light: rgba(37, 99, 235, 0.2);
+  --primary-border-light: rgba(37, 99, 235, 0.5);
+
+  --primary-bg-dark: rgba(37, 99, 235, 0.2);
+  --primary-bg-hover-dark: rgba(37, 99, 235, 0.3);
+  --primary-border-dark: rgba(37, 99, 235, 0.4);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background-color: var(--primary-bg-light);
+  border-radius: 0.75rem;
+  border: 2px dashed var(--primary-border-light);
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.card:hover {
+  background-color: var(--primary-bg-hover-light);
+}
+
+[theme-mode="dark"] .card {
+  background-color: var(--primary-bg-dark);
+  border-color: var(--primary-border-dark);
+}
+
+[theme-mode="dark"] .card:hover {
+  background-color: var(--primary-bg-hover-dark);
+}
+
+.icon {
+  font-size: 2.25rem;
+  color: var(--primary-color);
+}
+
+.textContainer {
+  text-align: center;
+}
+
+.title {
+  color: var(--primary-color);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.subtitle {
+  color: var(--primary-color-opacity);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
