@@ -1,5 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { LayoutPage, ErrorPage, CreateNote, HomePage } from "@pages";
+import {
+  LayoutPage,
+  ErrorPage,
+  CreateNote,
+  AllNotesPage,
+  HomePage,
+} from "@pages";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: "all-notes",
-        element: <div>All Notes</div>,
+        element: <AllNotesPage />,
       },
       {
         path: "statistics",

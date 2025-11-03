@@ -67,11 +67,10 @@ function HomePage() {
         )}
       </header>
 
-      {/* TODO => if records is empty ? Show Welcome Component Called Empty State { Here }*/}
-      {/* TODO => if records is empty ? Show Welcome Component Called PlaceHolder in { All Notes Page }*/}
-      {/* TODO => if records Exist ? Show First 5 Only and placeHolder for Sixth if Exist And Number of Notes */}
       {/* Note List */}
-      <NoteList>List</NoteList>
+      <NoteList headTotal={true} welcomeState={true} dashed={true}>
+        List
+      </NoteList>
     </div>
   );
 }

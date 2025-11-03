@@ -1,0 +1,16 @@
+.heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.sub {
+  margin: 0 0 0.875rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+}

@@ -35,28 +35,8 @@ function NoteItem({ id, title, description, date }) {
     return isTitleValid && isDescValid;
   }, [isTitleValid, isDescValid]);
 
-  function openModal() {
-    setIsModalOpen(true);
-  }
-
-  function closeModal() {
-    setIsModalOpen(false);
-    setEditTitle(title);
-    setEditDesc(description);
-  }
-
   function onDelete() {
     setRecords((prev) => prev.filter((note) => note.id !== id));
-  }
-
-  // Form Handlers and Validity
-  function editTitleHandler(e) {
-    setEditTitle(e.target.value);
-    dispatchFn({ key: "title", value: e.target.value });
-  }
-  function editDescHandler(e) {
-    setEditDesc(e.target.value);
-    dispatchFn({ key: "desc", value: e.target.value });
   }
 
   function onSave(e) {
@@ -69,6 +49,27 @@ function NoteItem({ id, title, description, date }) {
       )
     );
     closeModal();
+  }
+
+  // Form Handlers and Validity
+  function editTitleHandler(e) {
+    setEditTitle(e.target.value);
+    dispatchFn({ key: "title", value: e.target.value });
+  }
+
+  function editDescHandler(e) {
+    setEditDesc(e.target.value);
+    dispatchFn({ key: "desc", value: e.target.value });
+  }
+
+  function openModal() {
+    setIsModalOpen(true);
+    setEditTitle(title);
+    setEditDesc(description);
+  }
+
+  function closeModal() {
+    setIsModalOpen(false);
   }
 
   return (

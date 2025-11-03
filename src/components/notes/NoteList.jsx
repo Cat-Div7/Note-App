@@ -9,7 +9,7 @@ import {
 import { GlobalDataContext } from "@context";
 import { useContext } from "react";
 
-function NoteList() {
+function NoteList({ headTotal = false, welcomeState = false, dashed = false }) {
   const { records, isLoading, error } = useContext(GlobalDataContext);
 
   // Laoding PlaceHolder
@@ -23,23 +23,28 @@ function NoteList() {
   }
 
   // Greeting User To Track
-  if (!records || records.length === 0) {
+  if ((!records || records.length === 0) && welcomeState) {
     return <EmptyState />;
   }
 
-  const checkLength = records.length >= 6;
-  const visibleNotes = checkLength ? records.slice(0, 5) : records;
+  const MAX_VISIBLE = 5;
+  const checkLength = dashed ? records.length > MAX_VISIBLE : false;
+  const visibleNotes = checkLength ? records.slice(0, MAX_VISIBLE) : records;
+  const visibleCard = dashed && checkLength;
+  
 
   // Rendering Data
   return (
     <>
-      <p className={styles.noteCount}>Showing {records.length} notes</p>
+      {headTotal && (
+        <p className={styles.noteCount}>Showing {records.length} notes</p>
+      )}
       <div className={styles.content}>
         {visibleNotes.map((note) => (
           <NoteItem key={note.id} {...note} />
         ))}
 
-        {checkLength && <DashedCard />}
+        {visibleCard && <DashedCard />}
       </div>
     </>
   );
