@@ -24,7 +24,7 @@
   box-shadow: 0 0 5px var(--primary);
 }
 
-.error {
+.error:focus {
   border-color: var(--danger-color);
   box-shadow: 0 0 5px var(--danger-color);
 }

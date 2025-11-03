@@ -2,9 +2,10 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import {
   LayoutPage,
   ErrorPage,
-  CreateNote,
+  CreateNotePage,
   AllNotesPage,
   HomePage,
+  StatisticsPage,
 } from "@pages";
 
 const router = createBrowserRouter([
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "create",
-        element: <CreateNote />,
+        element: <CreateNotePage />,
       },
       {
         path: "all-notes",
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "statistics",
-        element: <div>Statistics</div>,
+        element: <StatisticsPage />,
       },
     ],
   },
