@@ -1,10 +1,18 @@
 import { useContext } from "react";
 import styles from "./AllNotesPage.module.css";
 import { GlobalDataContext } from "@context";
-import { NoteList } from "@components";
+import { NoteList, PlaceHolder } from "@components";
 
 function AllNotesPage() {
   const { records } = useContext(GlobalDataContext);
+
+  if (records.length === 0) {
+    return (
+      <div className={styles.placeholderContainer}>
+        <PlaceHolder value="No available notes" centered={true} />
+      </div>
+    );
+  }
 
   return (
     <>
