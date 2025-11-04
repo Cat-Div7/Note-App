@@ -7,8 +7,12 @@ import {
   faSun,
   faAngleDoubleLeft,
   faSquarePlus,
+  faCheckCircle,
+  faClock,
+  faTimesCircle,
+
   faStarOfLife,
-  faEllipsisH
+  faEllipsisH,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Regular
@@ -32,6 +36,10 @@ export {
   faPlus,
   faSquarePlus,
   faGithub,
+  faCheckCircle,
+  faClock,
+  faTimesCircle,
+
   faStarOfLife,
   faEllipsisH,
   // Regular

@@ -10,7 +10,7 @@ function FormInput({ tagName = "input", label, value, ...props }) {
       <Tag
         {...props}
         value={value}
-        className={`${styles[Tag]} ${validity ? undefined : styles.error}`}
+        className={`${styles[Tag]} ${validity ? '' : styles.error}`}
       />
     </label>
   );

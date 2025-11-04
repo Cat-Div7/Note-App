@@ -1,5 +1,5 @@
 import styles from "./CreateNotePage.module.css";
-import { useContext, useMemo, useReducer, useState } from "react";
+import { useContext, useMemo, useReducer } from "react";
 import { Button, FormInput } from "@components";
 import { GlobalDataContext } from "@root/context";
 import { useNavigate } from "react-router-dom";

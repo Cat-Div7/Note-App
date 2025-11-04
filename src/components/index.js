@@ -7,5 +7,6 @@ export * from "./notes/NoteList";
 export * from "./special/EmptyState";
 export * from "./common/Loader";
 export * from "./common/FormInput";
-export * from './common/Button'
-export * from './special/DashedCard'
+export * from "./common/Button";
+export * from "./special/DashedCard";
+export * from "./special/ChartCard";
