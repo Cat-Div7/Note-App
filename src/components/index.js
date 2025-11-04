@@ -10,3 +10,4 @@ export * from "./common/FormInput";
 export * from "./common/Button";
 export * from "./special/DashedCard";
 export * from "./special/ChartCard";
+export * from "./special/SweetAlert";

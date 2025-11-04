@@ -1,4 +1,4 @@
-import { ChartCard } from "@components";
+import { ChartCard, SweetAlert } from "@components";
 import styles from "./StatisticsPage.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faClock, faTimesCircle } from "@utils/icons";
@@ -148,6 +148,9 @@ function StatisticsPage() {
           </div>
         </div>
       </div>
+
+      {/* Alert Message */}
+      <SweetAlert />
     </>
   );
 }
