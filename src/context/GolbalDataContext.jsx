@@ -10,67 +10,13 @@ const GlobalDataContext = createContext({
 
 const STORAGE_KEY_NOTES = "notesData";
 
-let INITIAL_VALUE = [
-  {
-    id: crypto.randomUUID(),
-    title: "Meeting Notes",
-    description:
-      "Discussed Q3 roadmap and new features for the upcoming project launch. Key takeaways and action items assigned.",
-    date: new Date(),
-  },
-  {
-    id: crypto.randomUUID(),
-    title: "Meeting Notes",
-    description:
-      "Discussed Q3 roadmap and new features for the upcoming project launch. Key takeaways and action items assigned.",
-    date: new Date(),
-  },
-  {
-    id: crypto.randomUUID(),
-    title: "Meeting Notes",
-    description:
-      "Discussed Q3 roadmap and new features for the upcoming project launch. Key takeaways and action items assigned.",
-    date: new Date(),
-  },
-  {
-    id: crypto.randomUUID(),
-    title: "Meeting Notes",
-    description:
-      "Discussed Q3 roadmap and new features for the upcoming project launch. Key takeaways and action items assigned.",
-    date: new Date(),
-  },
-  {
-    id: crypto.randomUUID(),
-    title: "Meeting Notes",
-    description:
-      "Discussed Q3 roadmap and new features for the upcoming project launch. Key takeaways and action items assigned.",
-    date: new Date(),
-  },
-  {
-    id: crypto.randomUUID(),
-    title: "Meeting Notes",
-    description:
-      "Discussed Q3 roadmap and new features for the upcoming project launch. Key takeaways and action items assigned.",
-    date: new Date(),
-  },
-  {
-    id: crypto.randomUUID(),
-    title: "Meeting Notes",
-    description:
-      "Discussed Q3 roadmap and new features for the upcoming project launch. Key takeaways and action items assigned.",
-    date: new Date(),
-  },
-];
-
-// INITIAL_VALUE = [];
-
 function GlobalDataContextProvider({ children }) {
   const {
     value: records,
     setValue: setRecords,
     isLoading,
     error,
-  } = useLoadStorage(STORAGE_KEY_NOTES, INITIAL_VALUE);
+  } = useLoadStorage(STORAGE_KEY_NOTES, []);
 
   return (
     <GlobalDataContext.Provider
