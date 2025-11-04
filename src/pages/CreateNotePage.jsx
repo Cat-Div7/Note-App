@@ -69,6 +69,7 @@ function CreateNotePage() {
         tagName="input"
         label="Title"
         name="title"
+        maxlength={50}
         value={titleValue}
         onChange={titleHandler}
         placeholder="Enter note title..."

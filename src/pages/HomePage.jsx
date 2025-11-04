@@ -1,15 +1,17 @@
 import styles from "./HomePage.module.css";
-import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStarOfLife } from "@utils/icons";
+import { useContext, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Options, NoteList } from "@components";
+import { ThemeContext } from "@root/context";
+import noteLogoDark from "../assets/noteDark.png";
+import noteLogoLight from "../assets/noteLight.png";
 
 const CREATE_PATH = "create";
 
 function HomePage() {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+  const { isDark } = useContext(ThemeContext);
 
   const navToggleHandler = () => setOpen(!open);
 
@@ -30,7 +32,11 @@ function HomePage() {
       <header className={styles.header}>
         {/* Logo */}
         <div className={styles.logoContainer}>
-          <FontAwesomeIcon icon={faStarOfLife} className={styles.logoIcon} />
+          <img
+            src={isDark ? noteLogoLight : noteLogoDark}
+            className={styles.logoIcon}
+            alt="Note Logo"
+          />
           <span className={styles.logoText}>My Notes</span>
         </div>
 

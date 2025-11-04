@@ -10,8 +10,6 @@ import {
   faCheckCircle,
   faClock,
   faTimesCircle,
-
-  faStarOfLife,
   faEllipsisH,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -39,8 +37,6 @@ export {
   faCheckCircle,
   faClock,
   faTimesCircle,
-
-  faStarOfLife,
   faEllipsisH,
   // Regular
   faAngleDoubleLeft,
